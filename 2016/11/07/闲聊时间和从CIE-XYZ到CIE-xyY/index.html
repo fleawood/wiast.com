@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一段时间没有更新网站了，当然是因为没心情。最近忙了一些事，从新人练手项目，CCPC，到组合数学、随机算法作业，还有在主机上装CentOS差点没法启动win10的经历，最近又开始了半年前埋下祸根的创新项目，眼看着这学期已然过去一半，麻烦事总是一件接一件的到来。想到各方面的队友们不堪一击的战斗力，有时就感觉到深深的无力。实在是带不动。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闲聊时间和从CIE XYZ到CIE xyY">
+<meta property="og:url" content="http://www.wiast.com/2016/11/07/闲聊时间和从CIE-XYZ到CIE-xyY/index.html">
+<meta property="og:site_name" content="An unknown blog">
+<meta property="og:description" content="一段时间没有更新网站了，当然是因为没心情。最近忙了一些事，从新人练手项目，CCPC，到组合数学、随机算法作业，还有在主机上装CentOS差点没法启动win10的经历，最近又开始了半年前埋下祸根的创新项目，眼看着这学期已然过去一半，麻烦事总是一件接一件的到来。想到各方面的队友们不堪一击的战斗力，有时就感觉到深深的无力。实在是带不动。">
+<meta property="og:updated_time" content="2017-09-04T06:19:19.557Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="闲聊时间和从CIE XYZ到CIE xyY">
+<meta name="twitter:description" content="一段时间没有更新网站了，当然是因为没心情。最近忙了一些事，从新人练手项目，CCPC，到组合数学、随机算法作业，还有在主机上装CentOS差点没法启动win10的经历，最近又开始了半年前埋下祸根的创新项目，眼看着这学期已然过去一半，麻烦事总是一件接一件的到来。想到各方面的队友们不堪一击的战斗力，有时就感觉到深深的无力。实在是带不动。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.wiast.com/2016/11/07/闲聊时间和从CIE-XYZ到CIE-xyY/"/>
+
+
+
+
+
+  <title>闲聊时间和从CIE XYZ到CIE xyY | An unknown blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">An unknown blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">5% pressure, 50% pain</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.wiast.com/2016/11/07/闲聊时间和从CIE-XYZ到CIE-xyY/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fleawood">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="An unknown blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">闲聊时间和从CIE XYZ到CIE xyY</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-07T23:45:47+08:00">
+                2016-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/个人评论/" itemprop="url" rel="index">
+                    <span itemprop="name">个人评论</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/个人评论/色彩空间/" itemprop="url" rel="index">
+                    <span itemprop="name">色彩空间</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一段时间没有更新网站了，当然是因为没心情。最近忙了一些事，从新人练手项目，CCPC，到组合数学、随机算法作业，还有在主机上装CentOS差点没法启动win10的经历，最近又开始了半年前埋下祸根的创新项目，眼看着这学期已然过去一半，麻烦事总是一件接一件的到来。想到各方面的队友们不堪一击的战斗力，有时就感觉到深深的无力。实在是带不动。</p>
+<a id="more"></a>
+<p>其实我也很希望成为在各方面独当一面的人物，成为队友依赖的对象。但是毕竟我并非全能，而且还有不少课业，我已经是以一种偷工减料的方式挣扎着用大把时间花在课外的项目上，虽然之前几个学期都是这么做的，但这总归是权宜之计，这样学到的东西基础往往都不牢靠，即使考试得了高分，在将来也是后患无穷。这一点我已经在某些方面有所体会。</p>
+<p>前一阵子在食堂吃饭时突然体会到，其实拔尖班的教学安排用意颇深。众所周知，拔尖班重理论轻实践，几乎完全不教人和写代码相关的任何知识。美其名曰让大家自学，其实就是放任大家自生自灭。所以除非自己有额外的训练和实践，拔尖班的同学们代码能力都不强。唯一所知只有C++，还是仅限于结构化的部分，就连这些都要感谢kwc助教一学期的大力辅导。于是这些人出来之后肯定是毫无竞争力了，就像等待被屠杀的羔羊一样无助。不过现实也不是完全无望，其实还有一条出路，就是保研do research，正好系里面也给拔尖班同学们对口了颇为优惠的保研政策，平均分75即可。一方面提高了保研率，另一方面也培养了科研方向的“后备人才”，还有大把的专项经费，真是一举多得。</p>
+<p>有时突然会想到一些人，身边总是有不少牛人谈笑风生，路子也很广，总给人感觉很厉害的样子。但是实际上他们并不强，至少不是顶尖的那部分人。<span style="color: #ffffff;">（没错，我指的就是某些妹子）</span>也许算是一种人际交往方面的能力吧，这也正是我所不擅长的。但是我不喜欢这种人，这些人外强中干，徒有其表。也许他们能出色的完成任务，但大多数情况下，他们不过是拜托了另一位大牛代劳。他们用着精湛的交往能力在纷繁杂乱的事务间出入自如，广受好评，但问题的真正解决与他们关系并不大。这个社会其实现实得很，有能力者身边必然聚集一帮狐朋狗友，一旦不再受人需要，很快就打入冷宫。<span style="color: #ffffff;"><cite>冰菓</cite>里就有这么一个人。</span></p>
+<p>下面回归正题。这两天我打算进展一下创新项目，目前打算对一个图像（一帧）进行污染，<a href="http://www.cs.iit.edu/~xli/paper/Conf/kaleido-mobicom15.pdf" target="_blank" rel="external">paper</a>里说了Illuminance Frame Pollution和Chromatic Frame Decomposition，翻译过来大概是亮度污染和色度分解的意思。本来以为并不太难，然而后来仔细看的时候才发现，这玩意儿是在CIE xyY颜色空间里做的变换，但是一般我们处理图像都是在RGB颜色空间里做的。于是我赶紧去学习了一下CIE xyY颜色空间，看wiki，中文的没看懂，英文的也没看懂。于是又去其他地方看了一些英文文章，好不容易看出个大概。可是实践的时候又出了问题，opencv里没有RGB向CIE xyY空间的直接转换，于是我又去研究了一波CIE XYZ和CIE xyY的关系。然而还是颇有问题，都说CIE XYZ和CIE xyY用的是同一个Y，而且都代表亮度，但是我直接修改CIE XYZ中的Y值，得到的新图并不是仅仅改变亮度，而是连色调都变了，这就奇怪了。百思不得其解，又去找了新的文章看，还是没明白。就在前几个小时，我突然想到paper里说的是CIE xyY空间，而我工作在CIE XYZ空间下，直接改Y会导致xy的数值发生变化，也就是说得到的不是原来的颜色了。所以不仅要修改Y，X和Z也要相应修改。但是具体要怎么做呢？研究了半天，我发现这其实是个简单的数学问题。</p>
+<hr>
+<p>对于原图中某个像素，在CIE XYZ颜色空间中表示为(X, Y, Z)，对应在CIE xyY颜色空间中表示为(x, y, Y)，有如下关系</p>
+<p>$ x = \frac{X}{X+Y+Z}$<br>$ y = \frac{Y}{X+Y+Z}$</p>
+<p>那么对于新图中的同一像素，在CIE XYZ颜色空间中表示为(X’, Y’, Z’)，对应在CIE xyY颜色空间中表示为(x, y, Y’)，那么有如下关系</p>
+<p>$ x = \frac{X’}{X’+Y’+Z’}$<br>$ y = \frac{Y’}{X’+Y’+Z’}$</p>
+<p>现在已知x, y, Y’，马上就能解得</p>
+<p>$ X’ = \frac{x}{y} * Y’$<br>$ Z’ = \frac{Y’}{y} - X’ - Y’$</p>
+<p>举例来说，当取Y’ = 0的时候，X’和Z’也要取0，此时的图像就是纯黑的。把这个公式再应用到程序后，终于得到了调整亮度的效果，真是太不容易了。不得不说虽然网上关于CIE颜色空间的文章不少，但是对于从CIE XYZ到CIE xyY的具体转换，还有在上面进行的其他变换操作，就只有靠自己理解整个知识体系才能了解。</p>
+<p>在这个过程中，我有十几个小时都在反复看类似的材料，还有好几个小时在进行着（几乎无用的）调试，但关键的其实就是脑子里的灵光一现，写出来也就两三行代码。那是否意味着之前的努力都白费了呢？也许是，也许不是。但局外人只会看到最后的成果，还以为你偷懒就只写了一点点。这其中的道理，真是不能多说。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    fleawood
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.wiast.com/2016/11/07/闲聊时间和从CIE-XYZ到CIE-xyY/" title="闲聊时间和从CIE XYZ到CIE xyY">http://www.wiast.com/2016/11/07/闲聊时间和从CIE-XYZ到CIE-xyY/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/16/2016-10-16/" rel="next" title="2016-10-16">
+                <i class="fa fa-chevron-left"></i> 2016-10-16
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/21/2016-12-21/" rel="prev" title="2016-12-21">
+                2016-12-21 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">fleawood</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/fleawood" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-nd.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fleawood</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
