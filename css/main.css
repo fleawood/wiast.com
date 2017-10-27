@@ -186,9 +186,9 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
-  color: #555;
+  color: #333;
   background: #fff;
 }
 @media (max-width: 767px) {
@@ -280,7 +280,7 @@ a {
   color: #555;
   text-decoration: none;
   outline: none;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #777;
   word-wrap: break-word;
 }
 a:hover {
@@ -301,13 +301,13 @@ hr {
   margin: 40px 0;
   height: 3px;
   border: none;
-  background-color: #ddd;
+  background-color: #ccc;
   background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
 }
 blockquote {
   padding: 0 15px;
   color: #666;
-  border-left: 4px solid #ddd;
+  border-left: 4px solid #ccc;
 }
 blockquote cite::before {
   content: "-";
@@ -321,7 +321,7 @@ dd {
   padding: 0;
 }
 kbd {
-  border: 1px solid #ccc;
+  border: 1px solid #aaa;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
   background-color: #f9f9f9;
@@ -386,7 +386,7 @@ kbd {
 .translation {
   margin-top: -20px;
   font-size: 14px;
-  color: #999;
+  color: #777;
 }
 .scrollbar-measure {
   width: 100px;
@@ -480,14 +480,14 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 16px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
 }
 pre,
 code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: 'Inconsolata', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
   padding: 2px 4px;
@@ -495,7 +495,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 16px;
 }
 pre code {
   padding: 0;
@@ -678,14 +678,14 @@ pre .javascript .function {
 .page-post-detail .post-type-quote blockquote::before {
   top: -20px;
   background-image: url("../images/quote-l.svg");
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #aaa;
 }
 .blockquote-center::after,
 .page-home .post-type-quote blockquote::after,
 .page-post-detail .post-type-quote blockquote::after {
   bottom: -20px;
   background-image: url("../images/quote-r.svg");
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #aaa;
   background-position: 100% 8px;
 }
 .blockquote-center p,
@@ -951,7 +951,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #555;
+  background: #333;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1155,7 +1155,7 @@ pre .javascript .function {
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ccc;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1221,8 +1221,8 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: 10px auto 15px;
   text-align: center;
-  font-size: 14px;
-  color: #999;
+  font-size: 16px;
+  color: #777;
   font-weight: bold;
   line-height: 1;
 }
@@ -1289,7 +1289,7 @@ pre .javascript .function {
 .posts-expand .post-body h6 .header-anchor {
   float: right;
   margin-left: 10px;
-  color: #ccc;
+  color: #aaa;
   border-bottom-style: none;
   visibility: hidden;
 }
@@ -1314,7 +1314,7 @@ pre .javascript .function {
   box-sizing: border-box;
   margin: auto;
   padding: 3px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
 }
 .posts-expand .fancybox img {
   margin: 0 auto;
@@ -1360,7 +1360,7 @@ pre .javascript .function {
   margin-left: 20px;
 }
 .posts-collapse .collection-title small {
-  color: #bbb;
+  color: #999;
   margin-left: 5px;
 }
 .posts-collapse .collection-title::before {
@@ -1372,7 +1372,7 @@ pre .javascript .function {
   margin-top: -4px;
   width: 8px;
   height: 8px;
-  background: #bbb;
+  background: #999;
   border-radius: 50%;
 }
 .posts-collapse .post {
@@ -1384,7 +1384,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #aaa;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1394,7 +1394,7 @@ pre .javascript .function {
   width: 6px;
   height: 6px;
   margin-left: -4px;
-  background: #bbb;
+  background: #999;
   border-radius: 50%;
   border: 1px solid #fff;
   transition-duration: 0.2s;
@@ -1487,7 +1487,7 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
-  color: #999;
+  color: #777;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
   text-align: center;
@@ -1498,7 +1498,7 @@ pre .javascript .function {
   padding: 3px;
 }
 .posts-expand .post-meta .post-category-list-link {
-  color: #999;
+  color: #777;
 }
 .posts-expand .post-meta .post-description {
   font-size: 14px;
@@ -1614,7 +1614,7 @@ pre .javascript .function {
   margin: 80px auto 60px;
   width: 8%;
   height: 1px;
-  background: #ccc;
+  background: #aaa;
   text-align: center;
 }
 .post:last-child .post-eof.post-eof.post-eof {
@@ -1680,7 +1680,7 @@ pre .javascript .function {
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
-  color: #999;
+  color: #777;
   border-bottom-color: #555;
 }
 .sidebar a:hover {
@@ -1699,7 +1699,7 @@ pre .javascript .function {
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
-  color: #999;
+  color: #777;
   text-align: center;
 }
 .sidebar-toggle {
@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b3ee8c;
+  background: #133c3d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1949,7 +1949,7 @@ pre .javascript .function {
 }
 .footer {
   font-size: 14px;
-  color: #999;
+  color: #777;
 }
 .footer img {
   border: none;
@@ -2404,7 +2404,7 @@ pre .javascript .function {
   margin: 5px 10px;
 }
 .category-all-page .category-list-count {
-  color: #bbb;
+  color: #999;
 }
 .category-all-page .category-list-count:before {
   display: inline;
@@ -2602,7 +2602,7 @@ p {
   margin: 0 0 25px 0;
 }
 a {
-  border-bottom-color: #ccc;
+  border-bottom-color: #aaa;
 }
 hr {
   margin: 20px 0;
@@ -2810,7 +2810,7 @@ hr {
   border-bottom: none;
 }
 .posts-expand .post-tags a:hover {
-  background: #ccc;
+  background: #aaa;
 }
 .posts-expand .post-nav {
   margin-top: 40px;
@@ -2822,7 +2822,7 @@ hr {
 .post-button a {
   margin: 0 8px 8px 0 !important;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   background: none;
   border: none;
